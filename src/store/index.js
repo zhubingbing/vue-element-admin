@@ -1,18 +1,23 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import user from './modules/user.js'
-import app from './modules/app.js'
-
+import app from './modules/app'
+import errorLog from './modules/errorLog'
+import permission from './modules/permission'
+import tagsView from './modules/tagsView'
+import user from './modules/user'
+import getters from './getters'
 
 Vue.use(Vuex)
 
-const debug = process.env.NODE_ENV !== 'production'
-
-
-export default new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     app,
+    errorLog,
+    permission,
+    tagsView,
     user
   },
-  strict: debug
+  getters
 })
+
+export default store
